@@ -2,6 +2,64 @@
 #include <iostream>
 #include <string>
 
+int main()
+{
+   ReadFile* rf = new ReadFile("cds.txt");
+ 
+
+   while(!rf->eof())
+   {
+      String* line = rf->readLine();
+      
+      delete line;
+   }
+
+   rf->close();
+   
+   delete rf;
+  
+
+   return 0;
+}
+
+ReadFile::ReadFile(const char* file_name)
+{	
+	input_file.open(file_name);
+	closed = false;
+	_eof = false;
+}
+
+ReadFile::~ReadFile()
+{
+	close();
+}
+
+String* ReadFile::readLine()
+{
+	if (closed) return NULL;
+	if (_eof) return NULL;
+	
+	string text;
+	_eof = !(getline(input_file, text));
+	
+	String* str = new String((const char*) text.c_str());
+	return str;
+}
+
+bool ReadFile::eof()
+{
+	return _eof;
+}
+
+void ReadFile::close()
+{
+	if (!closed)
+	{
+		input_file.close();
+		closed = true;
+	}
+}
+/*
 ReadFile* createReadFile(const char* file_name)
 {
    ReadFile* rf = new ReadFile;
@@ -44,3 +102,4 @@ String* readLine(ReadFile* rf)
    String* str = new String((const char*) text.c_str());
    return str;
 }
+*/
