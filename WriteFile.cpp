@@ -1,3 +1,9 @@
+/*
+   Filename: WriteFile.cpp
+   Modified By: Logan Davis
+   Date Modified: 9/02/2016
+*/
+
 #include "WriteFile.h"
 #include <sstream>
 
@@ -12,7 +18,6 @@ WriteFile::~WriteFile()
    close();
 }
 
-
 void WriteFile::close()
 {
    if (!closed)
@@ -21,7 +26,6 @@ void WriteFile::close()
       closed = true;
    }
 }
-
 
 void WriteFile::writeLine(String* line)
 {

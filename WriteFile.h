@@ -1,3 +1,9 @@
+/*
+   Filename: WriteFile.h
+   Modified By: Logan Davis
+   Date Modified: 9/02/2016
+*/
+
 #if !defined WRITE_FILE
 #define WRITE_FILE
 
@@ -18,13 +24,5 @@ class WriteFile
 	void writeLine(String* line);
 	void close();
 };
-
-// Obsolete struct code
-/*
-WriteFile* createWriteFile(const char* file_name);
-void destroyWriteFile(WriteFile* wf);
-void writeLine(WriteFile* wf, String* line);
-void close(WriteFile* wf);
-*/
 
 #endif
