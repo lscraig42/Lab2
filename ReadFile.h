@@ -1,3 +1,4 @@
+//Modified by Landon Craig on 9/2/16
 #if !defined READ_FILE
 #define READ_FILE
 
@@ -6,6 +7,7 @@
 #include <fstream>
 using namespace std;
 
+//This is a class that contains three variables, a constructor, a destructor, and three functions.
 class ReadFile
 {
 	private:
