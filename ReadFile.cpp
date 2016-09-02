@@ -2,26 +2,6 @@
 #include <iostream>
 #include <string>
 
-int main()
-{
-   ReadFile* rf = new ReadFile("cds.txt");
- 
-
-   while(!rf->eof())
-   {
-      String* line = rf->readLine();
-      
-      delete line;
-   }
-
-   rf->close();
-   
-   delete rf;
-  
-
-   return 0;
-}
-
 ReadFile::ReadFile(const char* file_name)
 {	
 	input_file.open(file_name);

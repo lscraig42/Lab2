@@ -3,8 +3,8 @@
 
 WriteFile::WriteFile(const char* file_name)
 {
-   wf->output_file.open(file_name);
-   wf->closed = false;
+   output_file.open(file_name);
+   closed = false;
 }
 
 WriteFile::~WriteFile()
